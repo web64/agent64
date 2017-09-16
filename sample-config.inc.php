@@ -22,3 +22,7 @@ define('MEMCACHE_PORT', 11211);
 // ElasticSearch 
 define('ELASTIC_HOST', 'localhost');
 define('ELASTIC_PORT', 9200);
+
+// Redis
+define('REDIS_HOST', 'localhost');
+define('REDIS_PORT', 6379);

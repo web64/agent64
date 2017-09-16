@@ -19,5 +19,6 @@ Uptime agents for services will give a HTTP 500 on connection failure
 * MySQL
 * CrateDB
 * Memcache
-* Diskspace 
+* Diskspace
+
 ...HTTP 500 error when disk usage is over 90%
