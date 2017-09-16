@@ -1,0 +1,20 @@
+<?php
+ini_set('display_errors', 0);
+ini_set('display_startup_errors', 0);
+error_reporting( E_ALL | E_STRICT );
+
+// MySQL
+define('MYSQL_HOST', 'localhost');
+define('MYSQL_USER', 'root');
+define('MYSQL_PASSWORD', '');
+
+
+// CrateDB (crate.io)
+define('CRATE_HOST', 'localhost');
+define('CRATE_PORT', 4200);
+
+
+
+// CrateDB (crate.io)
+define('MEMCACHE_HOST', 'localhost');
+define('MEMCACHE_11211', 11211);

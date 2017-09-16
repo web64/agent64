@@ -1,4 +1,8 @@
 <?php
+require('config.inc.php');
+/**
+    Check CrateDB Connection
+*/
 
 $data = file_get_contents("http://". CRATE_HOST .":". CRATE_PORT);
 
