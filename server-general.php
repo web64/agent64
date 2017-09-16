@@ -14,7 +14,7 @@ $mon->get_servername();
 $mon->memory();
 $mon->parse_php();
 $mon->check_php_extensions();
-$mon->parse_df();
+$mon->parse_df(); // check disk space
 $mon->mysql();
 $mon->get_websites();
 $mon->get_crons();
@@ -22,7 +22,4 @@ $mon->get_load();
 
 header('Content-Type: application/json');
 echo json_encode($mon);
-return;
-
-
 
