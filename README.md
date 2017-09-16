@@ -12,3 +12,11 @@ cp sample-config.inc.php config.inc.php
 ```
 
 Edit config.inc.php to match your set-up.
+
+
+## Current Uptime Agents
+Uptime agents for services will give a HTTP 500 on connection failure
+* MySQL
+* CrateDB
+* Memcache
+* Diskspace - HTTP 500 error when disk usage is over 90%
