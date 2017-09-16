@@ -19,6 +19,7 @@ $mon->mysql();
 $mon->get_websites();
 $mon->get_crons();
 $mon->get_load();
+$mon->get_os();
 
 header('Content-Type: application/json');
 echo json_encode($mon);

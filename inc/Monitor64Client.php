@@ -222,4 +222,10 @@ class Monitor64client
 		
 	}
 
+    function get_os()
+    {
+         # description
+        exec("lsb_release -d",$data);
+        $this->os = $data;
+    }
 }
