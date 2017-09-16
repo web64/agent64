@@ -210,16 +210,12 @@ class Monitor64client
 				$this->mysql['databases'][] = $row['Database'];
 		}
 
-
 		// MySQL Version
 		$result = $conn->query("SELECT VERSION() AS mysql_verison;");
 		$row = $result->fetch_assoc();
 		$this->mysql['version'] = $this->get_version_num($row['mysql_verison']);
 
-
-
 		$conn->close();
-		
 	}
 
     function get_os()
@@ -229,5 +225,11 @@ class Monitor64client
         $data = str_replace("Description:\t", '', $data);
         $data = str_replace(" LTS", '', $data);
         $this->os = $data;
+    }
+
+    function get_ram_processes()
+    {
+        exec("ps aux --sort -rss|head -10", $data );
+        $this->top_ram_processes = $data;
     }
 }
