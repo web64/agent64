@@ -17,4 +17,4 @@ define('CRATE_PORT', 4200);
 
 // CrateDB (crate.io)
 define('MEMCACHE_HOST', 'localhost');
-define('MEMCACHE_11211', 11211);
+define('MEMCACHE_PORT', 11211);
