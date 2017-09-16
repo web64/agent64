@@ -225,7 +225,9 @@ class Monitor64client
     function get_os()
     {
          # description
-        exec("lsb_release -d",$data);
+        exec("lsb_release -d", $data );
+        $data = str_replace("Description:\t", '', $data);
+        $data = str_replace(" LTS", '', $data);
         $this->os = $data;
     }
 }
