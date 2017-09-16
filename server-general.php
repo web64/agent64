@@ -20,7 +20,6 @@ $mon->get_websites();
 $mon->get_crons();
 $mon->get_load();
 $mon->get_os();
-$mon->get_ram_processes(); // top processes by RAM usage
 
 header('Content-Type: application/json');
 echo json_encode($mon);
