@@ -14,7 +14,11 @@ define('CRATE_HOST', 'localhost');
 define('CRATE_PORT', 4200);
 
 
-
 // CrateDB (crate.io)
 define('MEMCACHE_HOST', 'localhost');
 define('MEMCACHE_PORT', 11211);
+
+
+// ElasticSearch 
+define('ELASTIC_HOST', 'localhost');
+define('ELASTIC_PORT', 9200);
