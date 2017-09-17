@@ -13,7 +13,9 @@ if ( $conn->connect_error )
 }
 
 if ($result = $mysqli->query("SHOW SLAVE STATUS")) {
-    printf("Select returned %d rows.\n", $result->num_rows);
+    $row = $result->fetch_assoc();
+    print_r( $row );
+    //printf("Select returned %d rows.\n", $result->num_rows);
 
     /* free result set */
     $result->close();
