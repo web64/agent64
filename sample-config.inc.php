@@ -26,3 +26,8 @@ define('ELASTIC_PORT', 9200);
 // Redis
 define('REDIS_HOST', 'localhost');
 define('REDIS_PORT', 6379);
+
+
+// Beanstalk
+define('BEANSTALK_HOST', 'localhost');
+define('BEANSTALK_PORT', 11300);

@@ -229,6 +229,7 @@ class Monitor64client
 
     /*function get_ram_processes()
     {
+        // needs to run as root
         exec("ps aux --sort -rss|head -10", $data );
         $this->top_ram_processes = $data;
     }*/
