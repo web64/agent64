@@ -8,7 +8,7 @@ $fp = fsockopen(REDIS_HOST, REDIS_PORT, $errCode, $errStr, 1);
 if (!$fp) {
     // $errStr ($errCode)
     header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error', true, 500);
-    echo "Redis Connection Error \n";
+    echo "Redis Connection Error $errStr\n";
 }
 else {
     fclose($fp);
