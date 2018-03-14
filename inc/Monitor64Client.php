@@ -74,7 +74,7 @@ class Monitor64client
 		$d->close();
 	}
 
-	function get_nginx_sites()
+	function get_nginx_websites()
 	{
 		exec("grep server_name /etc/nginx/sites-enabled/* -RiI", $servernames);
 		if ( !empty($servernames) && is_array($servernames) )
