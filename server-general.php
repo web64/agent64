@@ -1,4 +1,5 @@
 <?php
+// Updated: 13 March 2018 - Forge support: added get_apache_websites() & php ini_path;
 // Updated: 16 Sept 2017 - Moved to Github
 // Updated: 4 sept 2017 - added PHP_INT_MAX 32/64 bit check
 // Updated: 3 July 2017 - added load
@@ -16,7 +17,8 @@ $mon->parse_php();
 $mon->check_php_extensions();
 $mon->parse_df(); // check disk space
 $mon->mysql();
-$mon->get_websites();
+//$mon->get_apache_websites();
+$mon->get_nginx_websites();
 $mon->get_crons();
 $mon->get_load();
 $mon->get_os();

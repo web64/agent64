@@ -11,6 +11,7 @@ class Monitor64client
 	public $crons = array();
 	public $error_a = array();
 	public $load = array();
+	public $services = array();
 
 
 	function __construct()
@@ -21,6 +22,7 @@ class Monitor64client
 			'running_crons'		=> 0,
 			'running_crons_list'=> array(),
 			'missing_extensions'=> array(),
+			'ini_path'			=> php_ini_loaded_file(),
 		);
 		$this->mysql = array(
 			'version'		=> '',
@@ -60,9 +62,9 @@ class Monitor64client
 		}
 	}
 
-	function get_websites()
+	function get_apache_websites( $dir = "/var/www/vhosts/" )
 	{
-		$d = @dir("/var/www/vhosts/");
+		$d = @dir( $dir );
 
 		while (false !== ($entry = $d->read()) )
 		{
@@ -70,6 +72,36 @@ class Monitor64client
 				$this->websites[] =  $entry;
 		}
 		$d->close();
+	}
+
+	function get_nginx_sites()
+	{
+		exec("grep server_name /etc/nginx/sites-enabled/* -RiI", $servernames);
+		if ( !empty($servernames) && is_array($servernames) )
+		{
+			foreach( $servernames as $line )
+			{
+				preg_match('/server_name (.+);$/i', $line, $matches);
+				if ( !empty($matches[1]) )
+				{
+					$mon->websites[] = trim($matches[1]);
+				}
+			}
+		}
+	}
+
+	function get_services()
+	{
+		exec("service --status-all |grep +", $_services);
+		echo "<pre>";
+		$this->services = [];
+
+		foreach($_services as $s)
+		{
+			$this->services[] = trim(
+				str_replace('[ + ]', '', $s)
+			);
+		}
 	}
 
 	function get_crons()
