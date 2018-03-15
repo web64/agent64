@@ -84,7 +84,7 @@ class Monitor64client
 				preg_match('/server_name (.+);$/i', $line, $matches);
 				if ( !empty($matches[1]) )
 				{
-					$mon->websites[] = trim($matches[1]);
+					$this->websites[] = trim($matches[1]);
 				}
 			}
 		}
