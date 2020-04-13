@@ -23,3 +23,9 @@ Uptime agents for services will give a HTTP 500 on connection failure
 * Diskspace
 
 ...HTTP 500 error when disk usage is over 90%
+
+
+## TODO
+```
+ulimit -n
+```
