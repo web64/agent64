@@ -11,4 +11,5 @@ if ( $mon->disk['fullest_used_percent'] < 90 )
 }else
 {
     header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error', true, 500);
+    echo "Full disk: " . $mon->disk['fullest_used_percent'] . "%";
 }
