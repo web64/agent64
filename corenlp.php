@@ -1,11 +1,11 @@
 <?php
 require('config.inc.php');
 /**
-    Check NLP Server Connection 
+    Check CoreNLP Connection 
 
 */
 
-$data = file_get_contents("http://localhost:6400");
+$data = file_get_contents("http://localhost:9000");
 
 if ( !empty($data) )
 {

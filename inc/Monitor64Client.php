@@ -186,7 +186,7 @@ class Monitor64client
 
 
 			$this->disk['total'] += (int)$elements[1];
-			if ( $used_percent > $this->disk['fullest_used_percent'] )
+			if ( strpos($elements[5], "/snap/") === false && $used_percent > $this->disk['fullest_used_percent'] )
 			{
 				$this->disk['fullest_used_percent'] = $used_percent;
 				$this->disk['fullest_disk'] 		= $elements[5];
