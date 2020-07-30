@@ -5,7 +5,7 @@ require('config.inc.php');
 
 */
 
-$data = file_get_contents("http://localhost:6400");
+$data = file_get_contents("http://localhost:6400/status");
 
 if ( !empty($data) )
 {
